@@ -7,13 +7,12 @@ export async function getBooks() {
     const resp = await client
         .from('books')
         .select('*');
-    
     if (resp.error) {
         throw Error(resp.error.message);
     }
-    
     return resp.data;
 }
+
 export async function getBookByID(id) {
     const resp = await client
         .from('books')
