@@ -10,6 +10,4 @@ async function loadBooks() {
         bookList.append(bookDiv);
     }
 }
-
-
 loadBooks();

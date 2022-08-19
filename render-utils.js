@@ -25,7 +25,7 @@ export function renderBookListItem(book) {
     img.src = `./assets/${book.img}.png`;
 
     const titleSpan = document.createElement('p');
-    titleSpan.textContent = `Title: ${book.title}`;
+    titleSpan.textContent = `title: ${book.title}`;
     titleSpan.classList.add('title');
 
     const authorSpan = document.createElement('p');
@@ -37,11 +37,11 @@ export function renderBookListItem(book) {
     pagesSpan.classList.add('pages');
 
     const yearSpan = document.createElement('p');
-    yearSpan.textContent = `Published in: ${book.year}`;
+    yearSpan.textContent = `published: ${book.year}`;
     yearSpan.classList.add('year');
 
     const publishingHouseSpan = document.createElement('p');
-    publishingHouseSpan.textContent = `Publisher: ${book.publisher}`;
+    publishingHouseSpan.textContent = `publisher: ${book.publisher}`;
     publishingHouseSpan.classList.add('publisher');
 
     div.append(img, titleSpan, authorSpan, yearSpan, pagesSpan, publishingHouseSpan);

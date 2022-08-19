@@ -23,7 +23,6 @@ export async function getBookByID(id) {
     if (resp.error) {
         throw Error(resp.error.message);
     }
-    
     return resp.data;
 }
  

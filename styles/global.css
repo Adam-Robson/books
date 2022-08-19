@@ -1,5 +1,5 @@
 :root {
-    --background: rgb(224, 234, 247);
+    --background: rgb(100, 78, 90);
     --header-background: white;
     --footer-background: rgb(243, 242, 242);
 }
@@ -10,6 +10,9 @@ body {
     background: var(--background);
     display: grid;
     grid-template-rows: auto 1fr auto;
+    grid-auto-rows: minmax(100px, auto);
+    gap: 15px;
+    align-items: center;
 }
 
 header {
@@ -22,6 +25,9 @@ header {
 
 main {
     padding: 20px;
+    display: inline;
+
+
 }
 
 footer {
@@ -32,4 +38,34 @@ footer {
     display: flex;
     justify-content: flex-end;
     background-color: var(--footer-background);
+}
+
+.book {
+    border: 5px solid #5e788d;
+    width:min-content;
+    background-color: #dfe9d1;
+    margin: 25px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
+    
+}
+
+.title {
+    padding: 10px;
+}
+
+.author {
+    padding: 10px;
+}
+
+.publisher {
+    padding: 10px;
+}
+
+.pages {
+    padding: 10px;
+}
+
+.year {
+    padding: 10px;
 }
