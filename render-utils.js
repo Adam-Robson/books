@@ -3,10 +3,10 @@ export function renderBookList(book) {
     div.classList.add('books');
 
     const a = document.createElement('a');
-    a.href = `./books/?id=${book.id}`;
-    
+    a.href = `./bookdetail/?id=${book.id}`;
+
     const p = document.createElement('p');
-    p.textContent = book.title;
+    p.textContent = `title: ${book.title}`;
     
     const img = document.createElement('img');
     img.src = `./assets/${book.img}.png`;
@@ -22,7 +22,7 @@ export function renderBookListItem(book) {
     div.classList.add('book');
    
     const img = document.createElement('img');
-    img.src = `./assets/${book.img}.png`;
+    img.src = `../assets/${book.img}.png`;
 
     const titleSpan = document.createElement('p');
     titleSpan.textContent = `title: ${book.title}`;

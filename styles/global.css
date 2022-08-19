@@ -26,8 +26,6 @@ header {
 main {
     padding: 20px;
     display: inline;
-
-
 }
 
 footer {
@@ -39,6 +37,12 @@ footer {
     justify-content: flex-end;
     background-color: var(--footer-background);
 }
+
+.book-list {
+    display: flex;
+    flex-wrap:wrap;
+}
+
 
 .book {
     border: 5px solid #5e788d;
