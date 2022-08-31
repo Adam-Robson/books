@@ -1,8 +1,17 @@
-// import functions and grab DOM elements
+import { getBooks } from './fetch-utils.js';
+import { renderBookList } from './render-utils.js';
 
-// let state
+const bookList = document.querySelector('.book-list');
 
-// set event listeners 
-  // get user input
-  // use user input to update state 
-  // update DOM to reflect the new state
+async function loadBooks() {
+   
+    const favoriteBooks = await getBooks();
+    
+    for (let book of favoriteBooks) {
+        
+        const bookDiv = renderBookList(book);
+        bookList.append(bookDiv);
+    }
+}
+loadBooks();
+
