@@ -20,7 +20,7 @@ export function renderBookList(book) {
 export function renderBookListItem(book) {
     const div = document.createElement('div');
     div.classList.add('book');
-   
+
     const img = document.createElement('img');
     img.src = `../assets/${book.img}.png`;
 

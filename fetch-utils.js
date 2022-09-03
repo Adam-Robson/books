@@ -3,26 +3,27 @@ const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZ
 
 const client = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
+
+
 export async function getBooks() {
-    const resp = await client
+    const response = await client
         .from('books')
         .select('*');
-    if (resp.error) {
-        throw Error(resp.error.message);
-    }
-    return resp.data;
+   
+    return checkError(response.data);
 }
 
 export async function getBookByID(id) {
-    const resp = await client
+    const response = await client
         .from('books')
         .select('*')
         .match({ id })
         .single();
 
-    if (resp.error) {
-        throw Error(resp.error.message);
-    }
-    return resp.data;
+   return checkError(response.data);
+}
+
+function checkError({ data, error }) {
+    return error ? console.error(error) : data;  
 }
  
