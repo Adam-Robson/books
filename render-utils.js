@@ -4,7 +4,7 @@ export function renderList(book) {
 
     const a = document.createElement('a');
     a.href = `./bookdetail/?id=${book.id}`;
-    a.classList.add('book-box')
+    a.classList.add('book-box');
 
     const p = document.createElement('p');
     p.textContent = `title: ${book.title}`;
