@@ -1,17 +1,18 @@
-import { getBookByID } from '../fetch-utils.js';
-import { renderBookListItem } from '../render-utils.js';
+import { getBookById } from '../fetch-utils.js';
+import { renderBookDetail } from '../render-utils.js';
 
-const bookDetailSection = document.getElementById('book-detail-section'); 
+const detailContainer = document.getElementById('detail-container'); 
 
 const params = new URLSearchParams(window.location.search);
 
 
 async function loadBook() {
-    
-    const book = await getBookByID(params.get('id'));
-    
-    const bookDiv = renderBookListItem(book);
-    bookDetailSection.append(bookDiv);
+   
+    const book = await getBookById(params.get('id'));
+   
+    const div = renderBookDetail(book);
+    detailContainer.append(div);
+    return detailContainer;
 }
 
 loadBook();

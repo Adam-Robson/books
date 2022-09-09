@@ -1,17 +1,18 @@
 import { getBooks } from './fetch-utils.js';
-import { renderBookList } from './render-utils.js';
+import { renderList } from './render-utils.js';
 
-const bookList = document.querySelector('.book-list');
+const listContainer = document.querySelector('.list-container');
 
 async function loadBooks() {
    
-    const favoriteBooks = await getBooks();
+    const books = await getBooks();
     
-    for (let book of favoriteBooks) {
-        
-        const bookDiv = renderBookList(book);
-        bookList.append(bookDiv);
+    for (let book of books) {        
+        const div = renderList(book);
+        listContainer.append(div);
     }
+    return books;
 }
+
 loadBooks();
 

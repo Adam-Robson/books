@@ -1,9 +1,10 @@
-export function renderBookList(book) {
+export function renderList(book) {
     const div = document.createElement('div');
     div.classList.add('books');
 
     const a = document.createElement('a');
     a.href = `./bookdetail/?id=${book.id}`;
+    a.classList.add('book-box')
 
     const p = document.createElement('p');
     p.textContent = `title: ${book.title}`;
@@ -17,7 +18,7 @@ export function renderBookList(book) {
     return div;
 }
 
-export function renderBookListItem(book) {
+export function renderBookDetail(book) {
     const div = document.createElement('div');
     div.classList.add('book');
 
@@ -40,11 +41,11 @@ export function renderBookListItem(book) {
     yearSpan.textContent = `published: ${book.year}`;
     yearSpan.classList.add('year');
 
-    const publishingHouseSpan = document.createElement('p');
-    publishingHouseSpan.textContent = `publisher: ${book.publisher}`;
-    publishingHouseSpan.classList.add('publisher');
+    const publisherSpan = document.createElement('p');
+    publisherSpan.textContent = `publisher: ${book.publisher}`;
+    publisherSpan.classList.add('publisher');
 
-    div.append(img, titleSpan, authorSpan, yearSpan, pagesSpan, publishingHouseSpan);
+    div.append(img, titleSpan, authorSpan, pagesSpan, yearSpan, publisherSpan);
     
     return div;
 }
