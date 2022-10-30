@@ -6,7 +6,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    
+
     <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
 
     <link rel="stylesheet" href="../styles/reset.css" />
@@ -15,14 +15,22 @@
 </head>
 <body>
     <header>
-        <h1 id="book-detail-page">A Book Detail.</h1>
+        <h2 class="detail-title">
+            A BOOK DETAIL
+        </h2>
     </header>
-
     <main>
         <section id="detail-container"></section>
     </main>
 
-    <footer>&copy; 2022 Learning to Develop</footer>
+    <footer class="detail-footer">
+        <p id="footer-top" class="detail-footer">
+            &copy;2022 Alchemy Code Lab Student, Portland, OR
+        </p>
+        <p id="footer-bottom" class="detail-footer">
+            created by Adam Robson | updated October 30, 2022
+        </p>
+    </footer>
 
     <script type="module" src="./bookdetail.js"></script>
 </body>
