@@ -7,7 +7,7 @@
 html, body {
     height: 100%;
     width: 100%;
-    background-color: rgb(104, 124, 127);
+    background-color: rgb(153, 182, 179);
 }
 
  header {
@@ -32,18 +32,19 @@ html, body {
     /* display: flex; */
     align-items: center;
     text-align: center;
-    justify-self: center;  
-    width: max-content;  
+    justify-self: center;
+    width: max-content;
+    color:rgb(134, 98, 98);
 }
 
 #footer-bottom {
-   
+
     align-items: flex-end;
     text-align: right;
     justify-content: right;
     width: max-content;
     margin-left:500px;
-
+    color:rgb(134, 98, 98);
 }
 
 main {
@@ -60,37 +61,49 @@ main {
 }
 
 .list-container {
-     grid-area: 1 / 1 / 3 / 3; 
-     position: relative;
-     left: 50px;
+    display: flex;
+    flex-direction: row;
+    flex-flow: wrap;
+    grid-area: 1 / 1 / 3 / 3;
+    justify-content: center;
+
 }
 
-.books { 
-    grid-area: 1 / 1 / 2 / 2; 
+.books {
+    grid-area: 1 / 1 / 2 / 2;
     color:cadetblue;
-    padding: 30px;
-    margin: 10px;
-    width:max-content;
+    padding: 5px;
+    margin: 5px;
+    display: flex;
     justify-content: center;
-    height: max-content;
+    align-items: center;
+
 }
 
 .book-box {
     grid-area: 1 / 2 / 2 / 3;
     justify-content: center;
-    text-align: justified;
-    text-decoration: none; 
+    text-align: center;
+    text-decoration: none;
+
 }
 
 p {
-    width: 325px;
+    width: 250px;
     text-align: justified;
     font-family: "Andale Mono", sans-serif;
-    color:aliceblue;
+    color:rgb(134, 98, 98);
     text-shadow: 4px 4px 20px rgb(38, 60, 86);
+    font-size: 13px;
 }
 
 img {
-    border: 1px solid aliceblue;
+    border: 1px solid rgb(250, 169, 169);
     box-shadow: 4px 4px 20px rgb(38, 60, 86);
+    height: 250px;
+}
+
+h2 {
+    text-align: center;
+    color:rgb(134, 98, 98);
 }
