@@ -27,7 +27,7 @@ export function renderBookDetail(book) {
     img.src = `../assets/${book.img}.png`;
 
     const title = document.getElementById('detail-title');
-    title.textContent = `${book.title} detail`;
+    title.textContent = `${book.title}`;
 
     const titleSpan = document.createElement('p');
     titleSpan.textContent = `TITLE: ${book.title}`;
