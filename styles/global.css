@@ -5,7 +5,7 @@
 }
 
 html, body {
-    height: 100vh;
+    height:100%;
     width: 98vw;
     margin: 0 auto;
     background-color: rgb(153, 182, 179);
@@ -66,4 +66,22 @@ h2, h3 {
 .link {
     text-decoration: none;
     color: rgb(134, 98, 98);
+}
+
+.link:hover {
+    cursor: pointer;
+    text-decoration: underline;
+    color:rgb(38, 60, 86);
+}
+
+#detail-container {
+    display: flex;
+    justify-content: center;
+    padding: 1em;
+    margin: auto;
+}
+
+footer {
+    text-align: center;
+    padding-bottom: 1.5em;
 }

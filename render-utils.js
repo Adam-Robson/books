@@ -7,6 +7,7 @@ export function renderList(book) {
     a.classList.add('book-box');
 
     const p = document.createElement('p');
+    p.classList.add('link');
     p.textContent = `${book.title}`;
     
     const img = document.createElement('img');
@@ -24,6 +25,9 @@ export function renderBookDetail(book) {
 
     const img = document.createElement('img');
     img.src = `../assets/${book.img}.png`;
+
+    const title = document.getElementById('detail-title');
+    title.textContent = `${book.title} detail`;
 
     const titleSpan = document.createElement('p');
     titleSpan.textContent = `TITLE: ${book.title}`;
