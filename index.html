@@ -5,23 +5,48 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-
     <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sofia+Sans+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/styles/reset.css" />
     <link rel="stylesheet" href="/styles/global.css" />
-    <title>Book of Influence</title>
+    <title>Books List by Adaam</title>
 </head>
 <body>
-    <header>
-        <h2>BOOKS OF INFLUENCE</h2>
-        <h3>by adam</h3>
+  <section class="section">
+    <header class="header">
+      <h1 class="title is-size-1 is-size-2-mobile">
+        Books List
+      </h1>
+      <h2 class="subtitle is-size-3 is-size-4-mobile">
+        by Adaam
+      </h2>
+      <h3 class="subtitle is-size-6-mobile">
+        The following is a list of books that I recommend!
+      </h3>
     </header>
-    <main>
-        <section class="list-container"></section>
+
+    <div class="columns is-mobile">
+      <div class="column" id="heart">
+        <figure id="figure" class="image is-96x96">
+          <img src="./assets/heart-256.png" alt="outline of a heart" />
+        </figure>
+      </div>
+    </div>
+  </section>
+  <section class="section" id="list">
+    <main class="tile is-ancestor">
+        <article class="tile list-container"></article>
     </main>
-    <footer>created by Adam Robson | updated March 9, 2023</footer>
+  </section>
+  <section >
+    <footer class="footer">
+      <p class="is-size-6-mobile">created by Adam Robson</p>
+      <p class="is-size-6-mobile">updated April 12, 2023</p>
+    </footer>
+  </section>
     <script type="module" src="app.js"></script>
 </body>
-
 </html>
