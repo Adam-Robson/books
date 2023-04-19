@@ -36,16 +36,11 @@ h1, h2, h3 {
 }
 
 
-#figure {
-    border: 2px solid var(--onyx);
-    padding: .5rem;
-    width: 
-}
-
 #heart {
+    padding: .5rem;
     outline: 1rem;
     width: 100%;
-    margin: auto;
+    margin: 2rem auto;
     display: flex;
     justify-content: center;
     
