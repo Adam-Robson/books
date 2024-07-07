@@ -1,17 +1,51 @@
-const SUPABASE_URL = 'https://fjidvhxajekcfrrjsnla.supabase.co';
-const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZqaWR2aHhhamVrY2ZycmpzbmxhIiwicm9sZSI6ImFub24iLCJpYXQiOjE2NjAxNDU2ODYsImV4cCI6MTk3NTcyMTY4Nn0._zi_gZoOt0ksKYa3J9htU9w6oH8ojf_WkKrLHWGaswo';
+// @ts-nocheck
+import { key, url } from './key.js';
 
-const client = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+const client = supabase.createClient(url, key);
 
 export async function getBooks() {
-    const response = await client.from('books').select();
-   
-    return response.data;
+  try {
+    const res = await client
+      .from('books-table')
+      .select();
+
+    if (res.error) {
+      throw new Error(
+        `Error fetching books from database: ${ res.error.message }`
+      );
+    }
+
+    return res.data;
+  } catch (error) {
+    console.error(error);
+    throw new Error('Failed to fetch books');
+  }
 }
 
 export async function getBookById(id) {
-    const response = await client.from('books').select('*').match({ id }).single();
+  if (!id) {
+    throw new Error('A book ID is required to view a book.');
+  }
 
-    return response.data;
+  try {
+    const res = await client
+      .from('books-table')
+      .select('*')
+      .match({ id })
+      .single();
+
+    if (res.error) {
+      throw new Error(`Error fetching book with ID ${ id }: ${ res.error.message }`);
+    }
+
+    if (!res.data) {
+      throw new Error(`Book with ID ${ id } not found`);
+    }
+
+    return res.data;
+  } catch (error) {
+    console.error(error);
+    throw new Error(`Failed to fetch book with ID ${ id }`);
+  }
 }
 

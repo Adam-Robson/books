@@ -1,0 +1,21 @@
+{
+  "name": "books",
+  "version": "1.0.0",
+  "description": "These are some of my favorite books. I will add to this list on a regularly. The books are in no particular order, but I thought I would catalog them all together.",
+  "main": "app.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Adam Robson <adamrayrobson@gmail.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "@eslint/js": "^9.6.0"
+  },
+  "dependencies": {
+    "globals": "^15.8.0"
+  }
+}

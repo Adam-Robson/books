@@ -1,53 +1,55 @@
 export function renderList(book) {
-    const div = document.createElement('div');
-    div.classList.add('books');
+  const div = document.createElement('div');
+  div.classList.add('book');
 
-    const a = document.createElement('a');
-    a.href = `./bookdetail/?id=${book.id}`;
-    a.classList.add('book-box');
+  const a = document.createElement('a');
+  a.href = `./book/?id=${ book.id }`;
+  a.classList.add('book-link');
 
-    const p = document.createElement('p');
-    p.classList.add('link', 'is-size-4', 'is-size-5-mobile');
-    p.textContent = `${book.title}`;
-    
-    const img = document.createElement('img');
-    img.src = `./assets/${book.image_name}`;
+  const title = document.createElement('h5');
+  title.classList.add('lato-thin');
+  title.classList.add('title');
+  title.textContent = book.title;
 
-    a.append(img, p);
-    div.append(a);
+  const img = document.createElement('img');
+  img.classList.add('image');
+  img.classList.add('book-image');
+  img.src = book.png_image;
 
-    return div;
+  a.append(img, title);
+  div.append(a);
+
+  return div;
 }
 
 export function renderBookDetail(book) {
-    const div = document.createElement('div');
-    div.classList.add('book');
+  const div = document.createElement('div');
+  div.classList.add('book');
 
-    const img = document.createElement('img');
-    img.classList.add('bookimage');
-    img.src = `../assets/${book.image_name}`;
+  const img = document.createElement('img');
+  img.classList.add('image');
+  img.src = book.png_image;
 
-    const titleSpan = document.createElement('h1');
-    titleSpan.textContent = `title:  ${book.title}`;
-    titleSpan.classList.add('title');
+  const title = document.createElement('h2');
+  title.classList.add('lato-regular');
+  title.classList.add('title');
+  title.textContent = book.title;
 
-    const authorSpan = document.createElement('p');
-    authorSpan.textContent = `author:  ${book.author}`;
-    authorSpan.classList.add('subtitle');
+  const author = document.createElement('h4');
+  author.classList.add('author');
+  author.classList.add('lato-thin');
+  author.textContent = `written by ${ book.author }`;
 
-    const pagesSpan = document.createElement('p');
-    pagesSpan.textContent = `pages:  ${book.pages}`;
-    pagesSpan.classList.add('subtitle');
+  const year = document.createElement('h4');
+  year.classList.add('year');
+  year.classList.add('lato-thin');
+  year.textContent = `published:  ${ book.year }, by ${ book.publisher }`;
 
-    const yearSpan = document.createElement('p');
-    yearSpan.textContent = `published:  ${book.year}`;
-    yearSpan.classList.add('subtitle');
+  const pages = document.createElement('h4');
+  pages.textContent = `pages:  ${ book.pages }`;
+  pages.classList.add('pages');
 
-    const publisherSpan = document.createElement('p');
-    publisherSpan.textContent = `publisher:  ${book.publisher}`;
-    publisherSpan.classList.add('subtitle');
+  div.append(img, title, author, year, pages);
 
-    div.append(img, titleSpan, authorSpan, pagesSpan, yearSpan, publisherSpan);
-    
-    return div;
+  return div;
 }

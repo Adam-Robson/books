@@ -1,87 +1,218 @@
-@import "https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css";
+@import url('https://fonts.googleapis.com/css?family=Playwrite%20US%20Modern:700|Lato:400');
+  
+* {
+    box-sizing: border-box;
+}
 
-:root {
---onyx: hsla(285, 3%, 27%, 1);
---dim-gray: hsla(247, 8%, 44%, 1);
---charcoal: hsla(214, 21%, 31%, 1);
---cadet-gray: hsla(195, 16%, 60%, 1);
---light-blue: hsla(188, 25%, 76%, 1);
---tomato: hsla(12, 85%, 60%, 1);
---mimi-pink: hsla(354, 79%, 91%, 1);
---isabelline: hsla(51, 20%, 93%, 1);
+@media (prefers-color-scheme: light) {
+    :root {
+        --text: #353535ff;
+        --background: #f1dedeff;
+        --primary: #bbc3c8ff;
+        --secondary: #3d4754ff;
+        --accent: #d2d4e1ff;
+    }
+}
 
-  box-sizing: border-box;
+    @media (prefers-color-scheme: dark) {
+    :root {
+        --text: #f1dedeff;
+        --background: #353535ff;
+        --primary: #bbc3c8ff;
+        --secondary:#3d4754ff;
+        --accent: #d2d4e1ff;
+    }
+}
+
+body {
+    height: 100%;
+    width: 100%;
+    font-family: 'Lato', Lucida Sans Unicode, 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: 400;
+    font-size: 100%;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(1fr, auto));
+    grid-template-rows: repeat(5, minmax(1fr, auto));
+    grid-template-areas:
+    'header header header'
+    'content content content'
+    'content content content'
+    'content content content'
+    'footer footer footer';
+    color: var(--text);
+    background-color: var(--background);
+    padding: 1.25rem;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: 'Lato';
+  font-weight: 400;
+}
+
+h1 {
+    font-size: 4.210rem;
+}
+
+h2 {
+    font-size: 3.158rem;
+}
+
+h3 {
+    font-size: 2.369rem;
+}
+
+h4 {
+    font-size: 1.777rem;
+}
+
+h5 {
+    font-size: 1.333rem;
 }
 
 a {
-    color: var(--charcoal);  
+    text-decoration: none;
+    color: var(--text);
+    transition: all 0.55s ease-in-out;
 }
 
 a:hover {
     text-decoration: underline;
-    color: var(--tomato);
+    color: var(--secondary);
 }
-
-html,
-body {
-    background-color: var(--isabelline);
-    color: var(--onyx);
-    font-family: 'Sofia Sans Semi Condensed', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  
+.lato-light {
+    font-family: "Lato", sans-serif;
     font-weight: 300;
-    text-align: center;
+    font-style: normal;
 }
 
-h1, h2, h3 {
-    color: var(--onyx);
+.lato-regular {
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-style: normal;
 }
 
+.lato-light-italic {
+    font-family: "Lato", sans-serif;
+    font-weight: 300;
+    font-style: italic;
+}
 
-#heart {
-    padding: .5rem;
-    outline: 1rem;
+.lato-regular-italic {
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-style: italic;
+}
+
+.header {
     width: 100%;
-    margin: 2rem auto;
+    grid-area: header;
     display: flex;
-    justify-content: center;
-    
-}
-
-#content {
-    display: flex;
-    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
+    padding: 1.25rem;
 }
 
-#list {
-    margin-top: -5rem;
+.icon {
+    max-width: 130px;
+    height: auto;
+}
+
+main {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
 }
 
 .list-container {
+    width: 100%;
+    grid-area: content;
+    margin: 0 auto;
     display: flex;
-    flex-flow: row wrap;
+    flex: 1;
+    flex-wrap: wrap;
+    flex-direction: row;
     justify-content: center;
-    padding: 1rem;
+    align-items: center;
 }
 
+.book {
+    width: 40rem;
+    margin: 0 auto;
+    padding: 2.5rem;
+    text-align: center;
 
-.books {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 1.5rem 3.5rem;
-    padding: auto;
-    width: 18rem;
+}
+
+.title {
+    padding: 0.7rem;
+    font-size: 0.88rem;
+}
+
+.image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px; 
 }
 
 .footer {
-    background-color: var(--mimi-pink);
-    display: flex;
-    justify-content: space-between;
-    font-size: 1.5rem;
+    grid-area: footer;
 }
 
-/* the content below this line is on the detail page */
-#back-home {
-    display: flex;
-    justify-content: flex-start;
+@media screen and (max-width: 576px) {
+
+h1, h2, h3, h4, h5 {
+  font-family: 'Lato';
+  font-weight: 300;
+}
+
+h1 {
+    font-size: 3.210rem;
+}
+
+h2 {
+    font-size: 2.158rem;
+}
+
+h3 {
+    font-size: 1.369rem;
+}
+
+h4 {
+    font-size: 0.777rem;
+}
+
+h5 {
+    font-size: 0.5rem;
+}
+
+.book {
+    width: 15rem;
+    margin: 0 auto;
+    padding: 1rem;
+    text-align: center;
+}
+
+.book-image {
+    max-width: 8.25rem;
+    margin: 0 auto;
+}
+
+.title {
+    padding: 0.2rem;
+    font-size: 0.53rem;
+}
+
+.icon {
+    max-width: 100px;
+}
+    
 }
