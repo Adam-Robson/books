@@ -1,4 +1,4 @@
-# Good Books
+# Books
 
 These are some books that I recommend reading.
 
