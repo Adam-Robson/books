@@ -5,7 +5,7 @@ async function loadBooks() {
   const listContainer = document.querySelector('.list-container');
   const books = await getBooks();
 
-  for (let book of books) {
+  for (const book of books) {
     const div = renderList(book);
     listContainer?.append(div);
   }

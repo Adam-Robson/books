@@ -5,9 +5,9 @@ name: Node.js CI
 
 on:
     push:
-        branches: [main, dev]
+        branches: [main]
     pull_request:
-        branches: [main, dev]
+        branches: [main]
 
 jobs:
     build:
@@ -28,3 +28,5 @@ jobs:
             - run: npx qunit test/index.js
               env:
                   CI: true
+                  SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+                  SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}

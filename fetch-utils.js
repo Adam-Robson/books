@@ -1,7 +1,7 @@
 // @ts-nocheck
-import { key, url } from './key.js';
+import { createClient } from '@supabase/supabase-js';
 
-const client = supabase.createClient(url, key);
+const client = createClient(process.env.SUPABASE_URL, process.env.SUPABASE_KEY);
 
 export async function getBooks() {
   try {
