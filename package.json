@@ -21,5 +21,9 @@
     "@types/eslint__js": "^8.42.3",
     "eslint": "^9.8.0",
     "globals": "^15.8.0"
+  },
+  "dependencies": {
+    "jsdom": "^24.1.1",
+    "qunit": "^2.21.1"
   }
 }
