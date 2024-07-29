@@ -1,6 +1,5 @@
 // include jsdom for DOM use in tests on travis
-import jsdom from 'jsdom';
-const { JSDOM } = jsdom;
+import { JSDOM } from 'jsdom';
 
 // set up jsdom
 const { window } = new JSDOM(``, {
@@ -14,5 +13,4 @@ global.sessionStorage = window.sessionStorage;
 global.URLSearchParams = window.URLSearchParams;
 global.URL = window.URL;
 
-const esmRequire = require('esm')(module);
-module.exports = esmRequire('./tests.js');
+import './tests.js';
